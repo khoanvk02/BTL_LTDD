@@ -1,0 +1,135 @@
+:root {
+  --bg: #0f172a;
+  --card: rgba(15, 23, 42, 0.78);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --primary: #38bdf8;
+  --primary-hover: #0ea5e9;
+  --danger: #f87171;
+  --border: rgba(148, 163, 184, 0.22);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: radial-gradient(circle at top right, #1e293b, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.bg-blur {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.2), transparent 35%),
+              radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.15), transparent 40%);
+}
+
+.container { width: min(900px, 100%); position: relative; z-index: 1; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.hidden { display: none; }
+
+h1, h2, h3 { margin: 0 0 8px; }
+.subtitle, .hint, .message, small, p { color: var(--muted); }
+
+.form {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+label { font-weight: 600; font-size: 14px; }
+
+input, textarea {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.8);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  font: inherit;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.22);
+}
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn.primary { background: var(--primary); color: #082f49; }
+.btn.primary:hover { background: var(--primary-hover); }
+.btn.ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.list-header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.entries {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.entry {
+  border: 1px solid var(--border);
+  background: rgba(15, 23, 42, 0.6);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.entry-title { font-weight: 700; }
+.entry-meta { color: var(--muted); font-size: 13px; }
+.entry-content { margin-top: 8px; line-height: 1.6; white-space: pre-wrap; }
+
+.empty {
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  color: var(--muted);
+}
